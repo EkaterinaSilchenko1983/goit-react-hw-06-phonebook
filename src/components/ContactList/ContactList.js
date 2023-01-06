@@ -7,6 +7,7 @@ export const ContactList = () => {
   const dispatch = useDispatch();
   const filter = useSelector(state => state.filters);
   const contacts = useSelector(state => state.contacts);
+  console.log(contacts);
 
   const getVizibleContact = () => {
     return filter
@@ -16,7 +17,7 @@ export const ContactList = () => {
 
   return (
     <List>
-      {getVizibleContact().map(contact => (
+      {console.log(getVizibleContact()).map(contact => (
         <ContactItem key={contact.id}>
           {contact.name}: {contact.number}
           <ButtonDelete
