@@ -1,10 +1,11 @@
-// import { PropTypes } from 'prop-types';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { InputFilter, LabelFilter } from './Filter.styled';
-import { setFilterContact } from 'redux/filtersSlice';
+import { setFilterContact, stateFilters } from 'redux/filtersSlice';
+
 
 export const Filter = () => {
-  const filter = useSelector(state => state.filter);
+  const filter = useSelector(stateFilters);
   const dispatch = useDispatch();
 
   const changeFilter = event => {
@@ -19,7 +20,4 @@ export const Filter = () => {
   );
 };
 
-// Filter.propTypes = {
-//   value: PropTypes.string.isRequired,
-//   onChange: PropTypes.func.isRequired,
-// };
+
